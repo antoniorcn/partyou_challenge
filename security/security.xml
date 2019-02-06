@@ -1,0 +1,11 @@
+<odoo>
+
+        <record id="partyou_admin" model="res.groups">
+            <field name="name">Partyou / Admin</field>
+        </record>
+        <record id="partyou_user" model="res.groups">
+            <field name="name">Partyou / User</field>
+        </record>
+
+</odoo>
+

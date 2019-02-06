@@ -2,8 +2,14 @@
 
 from odoo import models, fields, api
 
-# class partyou_challenge(models.Model):
-#     _name = 'partyou_challenge.partyou_challenge'
+class PartyouChallenge(models.Model):
+     _name = 'partyou.challenge.product' # Table in DB
+     _description = "Partyou Challenge"
+
+     nome = fields.Char(string="Nome", required=True)
+     validade = fields.Datetime(string="Validade", required=False, default=fields.Datetime.now)
+     preco = fields.Float(string="Preco", required=False)
+     peso = fields.Float(string="Peso", required=False)
 
 #     name = fields.Char()
 #     value = fields.Integer()

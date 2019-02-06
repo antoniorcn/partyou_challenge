@@ -1,44 +1,78 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="partyou_challenge.list">
-      <field name="name">partyou_challenge list</field>
-      <field name="model">partyou_challenge.partyou_challenge</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
+    <record id="view_partyou_challenge_form" model="ir.ui.view">
+        <field name="name">view.partyou.challenge.form</field>
+        <field name="model">partyou.challenge.product</field>
+        <field name="arch" type="xml">
+            <form name="Partyou Challenge Product">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only">
+                            <h1>
+                                <field name="nome" placeholder="Product Name"/>
+                            </h1>
+                        </label>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="validade"></field>
+                        </group>
+                        <group>
+                            <field name="preco"></field>
+                            <field name="peso"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
     </record>
-    -->
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="partyou_challenge.action_window">
-      <field name="name">partyou_challenge window</field>
-      <field name="res_model">partyou_challenge.partyou_challenge</field>
-      <field name="view_mode">tree,form</field>
+    <record id="view_partyou_challenge_tree" model="ir.ui.view">
+        <field name="name">view.partyou.challenge.tree</field>
+        <field name="model">partyou.challenge.product</field>
+        <field name="arch" type="xml">
+            <tree string="Product Tree">
+                <field name="nome"/>
+                <field name="validade"/>
+                <field name="preco"/>
+                <field name="peso"/>
+            </tree>
+        </field>
     </record>
-    -->
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="partyou_challenge.action_server">
-      <field name="name">partyou_challenge server</field>
-      <field name="model_id" ref="model_partyou_challenge_partyou_challenge"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
+    <record id="product_list_action" model="ir.actions.act_window">
+        <field name="name">Partyou Challenge Product</field>
+        <field name="res_model">partyou.challenge.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree, form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajuda do sistema de cadastro de produtos do Partyou Challenge
+            </p>
+            <p>
+                Mais detalhes sobre a ajuda no cadastro de produtos do Partyou Challenge
+                Clique para adicionar um novo produto
+            </p>
+        </field>
     </record>
-    -->
+
+              <!--<record model="ir.actions.act_window" id="course_list_action">-->
+            <!--<field name="name">Courses</field>-->
+            <!--<field name="res_model">openacademy.course</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+            <!--<field name="help" type="html">-->
+                <!--<p class="oe_view_nocontent_smiling_face">Create the first course-->
+                <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+
+
+    <menuitem id="menu_partyou.product_root" name="Partyou Produto"/>
+
+    <menuitem id="menu_partyou.menu_product_view" name="Partyou Produto" parent="menu_partyou.product_root"/>
+
+    <menuitem id="menu_partyou.menu_categories_view" name="Partyou Produto Views" parent="menu_partyou.menu_product_view" action="product_list_action"/>
 
     <!-- Top menu item -->
     <!--
