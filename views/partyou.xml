@@ -122,8 +122,26 @@
         </field>
     </record>
 
+    <record id="pedido_create_action" model="ir.actions.act_window">
+        <field name="name">Partyou Challenge Pedido Criar</field>
+        <field name="res_model">partyou.challenge.pedido</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajuda do sistema de visualização de Pedidos da Partyou Challenge
+            </p>
+            <p>
+                Mais detalhes sobre a ajuda na visualização de Pedido da Partyou Challenge
+            </p>
+        </field>
+    </record>
+
+
     <menuitem id="pedido_menu" name="Pedidos" parent="partyou_menu"
                   action="pedido_list_action"/>
+    <menuitem id="pedido_criar_menu" name="Criar Pedido" parent="partyou_menu"
+                  action="pedido_create_action"/>
 
 
     <!--Status-->
