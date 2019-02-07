@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="status0" model="partyou.challenge.status">
+            <field name="name">Aberto</field>
+            <field name="descricao">Pedido encontra-se aberto e pode ser editado</field>
+        </record>
+
+        <record id="status1" model="partyou.challenge.status">
+            <field name="name">Despachado</field>
+            <field name="descricao">Pedido encontra-se despachado</field>
+        </record>
+
+        <record id="status2" model="partyou.challenge.status">
+            <field name="name">Fechado</field>
+            <field name="descricao">Pedido foi entregue corretamente</field>
+        </record>
+
+        <record id="status3" model="partyou.challenge.status">
+            <field name="name">Cancelado</field>
+            <field name="descricao">Pedido foi cancelado</field>
+        </record>
+    </data>
+</odoo>

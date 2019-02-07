@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="metrica0" model="partyou.challenge.metrica">
+            <field name="sigla">Kg</field>
+            <field name="name">Kilograma</field>
+            <field name="descricao">Kilograma</field>
+        </record>
+
+        <record id="metrica1" model="partyou.challenge.metrica">
+            <field name="sigla">Lt</field>
+            <field name="name">Litro</field>
+            <field name="descricao">Litro</field>
+        </record>
+
+        <record id="metrica2" model="partyou.challenge.metrica">
+            <field name="sigla">g</field>
+            <field name="name">Grama</field>
+            <field name="descricao">Grama</field>
+        </record>
+
+        <record id="metrica3" model="partyou.challenge.metrica">
+            <field name="sigla">ml</field>
+            <field name="name">Mililitro</field>
+            <field name="descricao">Mililitro</field>
+        </record>
+    </data>
+</odoo>

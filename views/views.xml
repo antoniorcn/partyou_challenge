@@ -1,10 +1,11 @@
 <odoo>
-  <data>
-    <record id="view_partyou_challenge_form" model="ir.ui.view">
-        <field name="name">view.partyou.challenge.form</field>
+    <data>
+    </data>
+    <!--<record id="partyou_product_form_view" model="ir.ui.view">
+        <field name="name">product.form</field>
         <field name="model">partyou.challenge.product</field>
         <field name="arch" type="xml">
-            <form name="Partyou Challenge Product">
+            <form string="Partyou Challenge Product">
                 <sheet>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only">
@@ -27,8 +28,8 @@
         </field>
     </record>
 
-    <record id="view_partyou_challenge_tree" model="ir.ui.view">
-        <field name="name">view.partyou.challenge.tree</field>
+    <record id="partyou_product_tree_view" model="ir.ui.view">
+        <field name="name">product.tree</field>
         <field name="model">partyou.challenge.product</field>
         <field name="arch" type="xml">
             <tree string="Product Tree">
@@ -56,24 +57,16 @@
         </field>
     </record>
 
-              <!--<record model="ir.actions.act_window" id="course_list_action">-->
-            <!--<field name="name">Courses</field>-->
-            <!--<field name="res_model">openacademy.course</field>-->
-            <!--<field name="view_type">form</field>-->
-            <!--<field name="view_mode">tree,form</field>-->
-            <!--<field name="help" type="html">-->
-                <!--<p class="oe_view_nocontent_smiling_face">Create the first course-->
-                <!--</p>-->
-            <!--</field>-->
-        <!--</record>-->
+              -->
 
+<!--
+    <menuitem id="main_partyou_menu" name="Partyou Challenge"/>
 
-    <menuitem id="menu_partyou.product_root" name="Partyou Produto"/>
+    <menuitem id="partyou_menu" name="Partyou Challenge Menu" parent="main_partyou_menu"/>
 
-    <menuitem id="menu_partyou.menu_product_view" name="Partyou Produto" parent="menu_partyou.product_root"/>
-
-    <menuitem id="menu_partyou.menu_categories_view" name="Partyou Produto Views" parent="menu_partyou.menu_product_view" action="product_list_action"/>
-
+    <menuitem id="product_menu" name="Products" parent="partyou_menu"
+                  action="product_list_action"/>
+-->
     <!-- Top menu item -->
     <!--
     <menuitem name="partyou_challenge" id="partyou_challenge.menu_root"/>
@@ -90,5 +83,4 @@
     <menuitem name="Server to list" id="partyou_challenge" parent="partyou_challenge.menu_2"
               action="partyou_challenge.action_server"/>
     -->
-  </data>
 </odoo>

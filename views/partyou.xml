@@ -1,0 +1,168 @@
+<odoo>
+
+    <!--Produto-->
+    <record id="produto_form_view" model="ir.ui.view">
+        <field name="name">produto.form</field>
+        <field name="model">partyou.challenge.produto</field>
+        <field name="arch" type="xml">
+            <form name="Partyou Challenge Produto">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Informações Gerais">
+                            <group>
+                                <field name="validade"></field>
+                                <field name="preco"></field>
+                                <field name="metrica" widget="many2one_tags"/>
+                                <field name="quantidade"></field>
+                            </group>
+                        </page>
+                        <page string="Descrição">
+                            <field name="descricao"/>
+                        </page>
+                        <page string="Imagem">
+                            <field name="imagem" widget="image" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="produto_tree_view" model="ir.ui.view">
+        <field name="name">product.tree</field>
+        <field name="model">partyou.challenge.produto</field>
+        <field name="arch" type="xml">
+            <tree name="Produto Tree">
+                <field name="name"/>
+                <field name="validade"/>
+                <field name="preco"/>
+                <field name="metrica"/>
+                <field name="quantidade"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="produto_list_action" model="ir.actions.act_window">
+        <field name="name">Partyou Challenge Produto</field>
+        <field name="res_model">partyou.challenge.produto</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajuda do sistema de cadastro de produtos do Partyou Challenge
+            </p>
+            <p>
+                Mais detalhes sobre a ajuda no cadastro de produtos do Partyou Challenge
+                Clique para adicionar um novo produto
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="main_partyou_menu" name="Partyou Challenge"/>
+
+    <menuitem id="partyou_menu" name="Partyou Challenge Menu" parent="main_partyou_menu"/>
+
+    <menuitem id="produto_menu" name="Produtos" parent="partyou_menu"
+                  action="produto_list_action"/>
+
+
+    <!--Pedido-->
+    <record id="pedido_form_view" model="ir.ui.view">
+        <field name="name">pedido.form</field>
+        <field name="model">partyou.challenge.pedido</field>
+        <field name="arch" type="xml">
+            <form name="Partyou Challenge Pedido">
+                <sheet>
+                    <group>
+                        <field name="id"/>
+                        <field name="status" widget="many2one_tags"/>
+                        <notebook>
+                            <page string="Informações Gerais">
+                                <group>
+                                    <field name="data_despacho"/>
+                                </group>
+                            </page>
+                            <page string="Produtos">
+                                <field name="produtos"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pedido_tree_view" model="ir.ui.view">
+        <field name="name">pedido.tree</field>
+        <field name="model">partyou.challenge.pedido</field>
+        <field name="arch" type="xml">
+            <tree name="Pedido Tree">
+                <field name="status"/>
+                <field name="data_despacho"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pedido_list_action" model="ir.actions.act_window">
+        <field name="name">Partyou Challenge Pedido</field>
+        <field name="res_model">partyou.challenge.pedido</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajuda do sistema de visualização de Pedidos da Partyou Challenge
+            </p>
+            <p>
+                Mais detalhes sobre a ajuda na visualização de Pedido da Partyou Challenge
+                Clique para editar um Pedido já existente
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="pedido_menu" name="Pedidos" parent="partyou_menu"
+                  action="pedido_list_action"/>
+
+
+    <!--Status-->
+    <record id="status_list_action" model="ir.actions.act_window">
+        <field name="name">Partyou Challenge Status</field>
+        <field name="res_model">partyou.challenge.status</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajuda do sistema de visualização de Status da Partyou Challenge
+            </p>
+            <p>
+                Mais detalhes sobre a ajuda na visualização de Status da Partyou Challenge
+                Clique para editar um Status já existente
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="status_menu" name="Status" parent="partyou_menu"
+                  action="status_list_action"/>
+
+    <!--Metricas-->
+    <record id="metrica_list_action" model="ir.actions.act_window">
+        <field name="name">Partyou Challenge Metrica</field>
+        <field name="res_model">partyou.challenge.metrica</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajuda do sistema de visualização de Metricas da Partyou Challenge
+            </p>
+            <p>
+                Mais detalhes sobre a ajuda na visualização de Metricas da Partyou Challenge
+                Clique para editar uma Metrica já existente
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="metrica_menu" name="Metricas" parent="partyou_menu"
+                  action="metrica_list_action"/>
+</odoo>
